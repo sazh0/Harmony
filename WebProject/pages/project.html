@@ -1,0 +1,657 @@
+<!--
+    Name: Sara Abdulaziz Alzahrani | Joud Jamal Alkishi 
+    ID: 2105947 | 2011026
+    Section: GAR
+    Date: 2025-03-23
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Creation</title>
+    <link rel="stylesheet" href="../global/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Card & Form Wizard */
+        .card {
+            background-color: #2C3139;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-header,
+        .card-body {
+            background-color: #2C3139;
+            color: #fff;
+            padding: 2rem;
+        }
+
+        .btn-custom {
+            background-color: #76ae9a;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #5f8e7d;
+        }
+
+        /* Form Controls */
+        .form-control {
+            background-color: #3a3f47;
+            border: 1px solid #76ae9a;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background-color: #3a3f47;
+            border-color: #76ae9a;
+            box-shadow: none;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* Progress Bar */
+        .progress {
+            height: 8px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background-color: #76ae9a;
+        }
+
+        /* Wizard Steps */
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        /* Website Pages Section */
+        #pagesSection {
+            margin-bottom: 20px;
+        }
+
+        #pagesList span {
+            cursor: pointer;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Other Component Input */
+        #customComponentGroup {
+            margin-bottom: 20px;
+        }
+
+        /* Active Page Components Section */
+        #activePageSection {
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        #activePageComponentsDisplay span {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .remove-comp {
+            margin-left: 5px;
+            font-size: 0.75rem;
+            vertical-align: middle;
+        }
+
+        /* Standard Components Library */
+        fieldset {
+            margin-top: 20px;
+        }
+
+        .component {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #fff;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .component p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Sub-components: Each sub-component now has its own Add button */
+        .sub-components {
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 2px dashed #76ae9a;
+            margin-top: 10px;
+        }
+
+        .sub-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .sub-item span {
+            flex: 1;
+        }
+
+        .sub-item button {
+            flex-shrink: 0;
+        }
+
+        /* Review Step */
+        #reviewSummary h4 {
+            margin-top: 20px;
+        }
+
+        #reviewSummary p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top upside-down waves -->
+    <header class="section section-md section-md-1 text-center bg-wave-dark-wrap pb-0 text-gray-600 fixed-top">
+        <div class="bg-wave-dark bg-wave-dark-top-1 bg-gray-800">
+            <svg class="wave-dark wave-dark-top" width="1920" height="713" viewBox="0 0 1920 713"
+                preserveAspectRatio="none">
+                <path class="wave-path wave-path-top-1"
+                    d="M1920 463.314V713H0V414.325C0.0515862 414.316 0.103105 414.308 0.154556 414.299C59.8232 467.769 270.664 573.445 636.676 568.392C873.316 565.126 1040.4 505.514 1188.57 452.65C1326.86 403.309 1448.68 359.846 1595.21 373.565C1727.41 385.944 1837.94 423.471 1920 463.314Z"
+                    fill="white"></path>
+                <path class="wave-path wave-path-top-2"
+                    d="M1920 463.988V713H0V234.66C102.275 199.182 221.353 170.486 354.422 158.026C584.381 136.494 775.567 204.707 992.611 282.146C1225.15 365.113 1373 457.092 1858.75 463.796C1879.49 464.082 1899.9 464.142 1920 463.988Z"
+                    fill="white"></path>
+            </svg>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="../index.html">Harmony</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="schedule.html">Tasks Tracker</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section id="project-section" class="mt-5 pt-5">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-header text-center">
+                    <h2>Project Creation</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Progress Bar -->
+                    <div class="progress">
+                        <div class="progress-bar" id="progressBar" role="progressbar" style="width: 33%;"
+                            aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <form id="projectForm" action="../server/submit_project.php" method="post">
+                        <!-- Hidden field for page components data -->
+                        <input type="hidden" name="pageComponentsData" id="pageComponentsData">
+                        <!-- Step 1: Articulate Your Project -->
+                        <div id="step1" class="step active">
+                            <h3>Step 1: Articulate Your Project</h3>
+                            <p>Answer the following questions to define your project:</p>
+                            <div class="form-group">
+                                <label for="projectTitle">Project Title:</label>
+                                <input type="text" id="projectTitle" name="projectTitle" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDescription">Project Description:</label>
+                                <textarea id="projectDescription" name="projectDescription" class="form-control"
+                                    rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="targetAudience">Target Audience:</label>
+                                <input type="text" id="targetAudience" name="targetAudience" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="designGoals">Design Goals:</label>
+                                <textarea id="designGoals" name="designGoals" class="form-control" rows="3"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" id="nextStep1" class="btn btn-custom">Next: Select
+                                    Components</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Select UI/UX Components -->
+                        <div id="step2" class="step">
+                            <h3>Step 2: Select UI/UX Components</h3>
+                            <p>Add pages and assign components to each page. When you add a page, it is saved locally
+                                along with its components.</p>
+
+                            <!-- Website Pages Section -->
+                            <div id="pagesSection" class="mb-4">
+                                <h4>Website Pages</h4>
+                                <div class="input-group mb-2">
+                                    <input type="text" id="pageNameInput" class="form-control"
+                                        placeholder="Enter page name">
+                                    <div class="input-group-append">
+                                        <button type="button" id="addPageButton" class="btn btn-custom">Add
+                                            Page</button>
+                                    </div>
+                                </div>
+                                <div id="pagesList" class="d-flex flex-wrap"></div>
+                            </div>
+
+                            <!-- Active Page Components Display -->
+                            <div id="activePageSection" class="mb-4" style="display: none;">
+                                <h4>Components for Page: <span id="activePageName"></span></h4>
+                                <div id="activePageComponentsDisplay" class="mb-2"></div>
+                                <button type="button" id="undoRemove" class="btn btn-sm btn-warning"
+                                    style="display: none;">Undo Last Removal</button>
+                            </div>
+
+                            <!-- Standard Components Library -->
+                            <fieldset class="border p-3">
+                                <legend class="w-auto px-2">Components Library</legend>
+
+                                <!-- Header Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Header</strong>
+                                            <p>Provides a top navigation bar for branding and usability.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-components">
+                                        <div class="sub-item">
+                                            <span>Logo</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Logo" data-parent="Header">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Navigation Menu</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Navigation Menu" data-parent="Header">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Search Bar</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Search Bar" data-parent="Header">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Footer Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Footer</strong>
+                                            <p>Provides essential links and contact details.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-components">
+                                        <div class="sub-item">
+                                            <span>Contact Info</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Contact Info" data-parent="Footer">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Social Media Links</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Social Media Links" data-parent="Footer">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Copyright</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Copyright" data-parent="Footer">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sidebar Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Sidebar</strong>
+                                            <p>A vertical panel for navigation or contextual details.</p>
+                                        </div>
+                                        <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                            data-comp="Sidebar">Add</button>
+                                    </div>
+                                </div>
+
+                                <!-- Main Content Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Main Content</strong>
+                                            <p>The primary content area of the page.</p>
+                                        </div>
+                                        <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                            data-comp="Main Content">Add</button>
+                                    </div>
+                                </div>
+
+                                <!-- Gallery Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Gallery</strong>
+                                            <p>Displays a collection of images in a grid.</p>
+                                        </div>
+                                        <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                            data-comp="Gallery">Add</button>
+                                    </div>
+                                </div>
+
+                                <!-- Banner Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Banner</strong>
+                                            <p>Highlights important content in a large, eye-catching section.</p>
+                                        </div>
+                                        <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                            data-comp="Banner">Add</button>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial Block -->
+                                <div class="component">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Testimonial Section</strong>
+                                            <p>Showcases user testimonials and reviews.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-components">
+                                        <div class="sub-item">
+                                            <span>User Image</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="User Image" data-parent="Testimonial Section">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Quote</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Quote" data-parent="Testimonial Section">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Name</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Name" data-parent="Testimonial Section">Add</button>
+                                        </div>
+                                        <div class="sub-item">
+                                            <span>Title</span>
+                                            <button type="button" class="btn btn-custom btn-sm add-to-page"
+                                                data-comp="Title" data-parent="Testimonial Section">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Other Component (specify) Section -->
+                            <div id="customComponentGroup" class="mb-4">
+                                <h4>Custom Component:</h4>
+                                <div class="input-group">
+                                    <input type="text" id="customComponent" name="customComponent" class="form-control"
+                                        placeholder="Enter custom component">
+                                    <div class="input-group-append">
+                                        <button type="button" id="saveCustomComponent"
+                                            class="btn btn-custom">Save</button>
+                                    </div>
+                                </div>
+                                <div id="customComponentList" class="mt-2"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="button" id="prevStep2" class="btn btn-custom">Previous: Articulate
+                                    Project</button>
+                                <button type="button" id="toStep3" class="btn btn-custom">Next: Review Project</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Review & Save Project -->
+                        <div id="step3" class="step">
+                            <h3>Step 3: Review Your Project</h3>
+                            <div id="reviewSummary"></div>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="button" id="prevStep3" class="btn btn-custom">Previous: Edit
+                                    Components</button>
+                                <button type="submit" class="btn btn-custom">Save Project</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Local storage for pages and their components
+            var pages = []; // Array of page names
+            var pageComponentsData = {}; // Object mapping page names to an array of components
+            var activePage = null;
+            var lastDeleted = null; // For undo functionality
+
+            console.log("Project creation form initialized.");
+
+            // Update progress bar based on current step
+            function updateProgress(step) {
+                var progressBar = document.getElementById('progressBar');
+                if (step === 1) {
+                    progressBar.style.width = "33%";
+                    progressBar.setAttribute("aria-valuenow", "33");
+                } else if (step === 2) {
+                    progressBar.style.width = "66%";
+                    progressBar.setAttribute("aria-valuenow", "66");
+                } else if (step === 3) {
+                    progressBar.style.width = "100%";
+                    progressBar.setAttribute("aria-valuenow", "100");
+                }
+            }
+
+            // Step navigation
+            $('#nextStep1').click(function () {
+                $('#step1').fadeOut(300, function () {
+                    $('#step2').fadeIn(300).addClass('active');
+                    updateProgress(2);
+                    // When entering Step 2, render the pages list from the local pages array
+                    renderPages();
+                });
+                $('#step1').removeClass('active');
+            });
+
+            $('#prevStep2').click(function () {
+                $('#step2').fadeOut(300, function () {
+                    $('#step1').fadeIn(300).addClass('active');
+                    updateProgress(1);
+                });
+                $('#step2').removeClass('active');
+            });
+
+            $('#toStep3').click(function () {
+                // Before moving to review, update the hidden field with JSON data of pages and components
+                $('#pageComponentsData').val(JSON.stringify(pageComponentsData));
+                // Build review summary
+                var summaryHtml = '<h4>Project Details</h4>';
+                summaryHtml += '<p><strong>Project Title:</strong> ' + $('#projectTitle').val() + '</p>';
+                summaryHtml += '<p><strong>Project Description:</strong> ' + $('#projectDescription').val() + '</p>';
+                summaryHtml += '<p><strong>Target Audience:</strong> ' + $('#targetAudience').val() + '</p>';
+                summaryHtml += '<p><strong>Design Goals:</strong> ' + $('#designGoals').val() + '</p>';
+                summaryHtml += '<h4>Pages & Components</h4>';
+                for (var page in pageComponentsData) {
+                    summaryHtml += '<p><strong>' + page + ':</strong> ' + (pageComponentsData[page].length ? pageComponentsData[page].join(', ') : 'No components added') + '</p>';
+                }
+                $('#reviewSummary').html(summaryHtml);
+                $('#step2').fadeOut(300, function () {
+                    $('#step3').fadeIn(300).addClass('active');
+                    updateProgress(3);
+                });
+                $('#step2').removeClass('active');
+            });
+
+            $('#prevStep3').click(function () {
+                $('#step3').fadeOut(300, function () {
+                    $('#step2').fadeIn(300).addClass('active');
+                    updateProgress(2);
+                });
+                $('#step3').removeClass('active');
+            });
+
+            // Render pages list from the local pages array
+            function renderPages() {
+                var $pagesList = $('#pagesList');
+                $pagesList.empty();
+                if (pages.length > 0) {
+                    pages.forEach(function (page) {
+                        var $badge = $('<span class="badge badge-light mr-2 mb-2"></span>').text(page);
+                        $badge.click(function () {
+                            $('#pagesList span').removeClass('badge-success');
+                            $(this).addClass('badge-success');
+                            activePage = page;
+                            $('#activePageName').text(page);
+                            renderActivePageComponents();
+                            $('#activePageSection').show();
+                        });
+                        $pagesList.append($badge);
+                    });
+                } else {
+                    $pagesList.html('<p>No pages added.</p>');
+                }
+            }
+
+            // Add a new page
+            $('#addPageButton').click(function () {
+                var pageName = $('#pageNameInput').val().trim();
+                if (pageName !== "") {
+                    if (pages.indexOf(pageName) === -1) {
+                        pages.push(pageName);
+                        pageComponentsData[pageName] = []; // Initialize with empty components list
+                        console.log("Added page:", pageName);
+                    } else {
+                        alert("Page already exists.");
+                    }
+                    $('#pageNameInput').val('');
+                    renderPages();
+                }
+            });
+
+            // Add component to the active page
+            $(document).on('click', '.add-to-page', function () {
+                if (!activePage) {
+                    alert("Please select a page first.");
+                    return;
+                }
+                var parent = $(this).data('parent');
+                var comp = $(this).data('comp');
+                if (parent) {
+                    comp = parent + ", " + comp;
+                }
+                if (pageComponentsData[activePage].indexOf(comp) === -1) {
+                    pageComponentsData[activePage].push(comp);
+                    console.log("Added component", comp, "to page", activePage);
+                }
+                renderActivePageComponents();
+            });
+
+            // Render components for the active page
+            function renderActivePageComponents() {
+                var $display = $('#activePageComponentsDisplay');
+                $display.empty();
+                if (activePage && pageComponentsData[activePage]) {
+                    pageComponentsData[activePage].forEach(function (comp) {
+                        var $badge = $('<span class="badge badge-success mr-2 mb-2"></span>').text(comp);
+                        var $removeBtn = $('<button type="button" class="btn btn-sm btn-light remove-comp" data-comp="' + comp + '">x</button>');
+                        $badge.append($removeBtn);
+                        $display.append($badge);
+                    });
+                }
+                $('#undoRemove').hide();
+            }
+
+            // Remove a component from the active page with undo option
+            $(document).on('click', '.remove-comp', function (e) {
+                e.stopPropagation();
+                var comp = $(this).data('comp');
+                if (activePage && pageComponentsData[activePage]) {
+                    lastDeleted = { page: activePage, comp: comp };
+                    pageComponentsData[activePage] = pageComponentsData[activePage].filter(function (c) {
+                        return c !== comp;
+                    });
+                    console.log("Removed component", comp, "from page", activePage);
+                    renderActivePageComponents();
+                    $('#undoRemove').show();
+                }
+            });
+
+            $('#undoRemove').click(function () {
+                if (lastDeleted && activePage === lastDeleted.page) {
+                    pageComponentsData[activePage].push(lastDeleted.comp);
+                    console.log("Undo removal: Added back component", lastDeleted.comp, "to page", activePage);
+                    lastDeleted = null;
+                    renderActivePageComponents();
+                    $(this).hide();
+                }
+            });
+
+            // Save custom component from input and add to active page
+            $('#saveCustomComponent').click(function () {
+                var customText = $('#customComponent').val().trim();
+                if (customText !== "") {
+                    var $newBadge = $('<span class="badge badge-light mr-2 mb-2"></span>').text(customText);
+                    $('#customComponentList').append($newBadge);
+                    if (activePage) {
+                        if (pageComponentsData[activePage].indexOf(customText) === -1) {
+                            pageComponentsData[activePage].push(customText);
+                            console.log("Added custom component", customText, "to page", activePage);
+                        }
+                        renderActivePageComponents();
+                    }
+                    $('#customComponent').val('');
+                }
+            });
+
+            // Form submission: send project details (including pages & components) to PHP for saving in a text file
+            $('#projectForm').on('submit', function (e) {
+                e.preventDefault();
+                // The hidden field #pageComponentsData is already updated in step 3
+                var formData = $(this).serialize();
+                console.log("Submitting project. Data:", formData);
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: formData,
+                    success: function (response) {
+                        console.log("Project saved successfully:", response);
+                        alert("Project saved successfully!");
+                        // Optionally, reset the form or redirect here
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error("Error saving project:", textStatus, errorThrown);
+                        alert("Error saving project: " + textStatus);
+                    }
+                });
+            });
+        });
+    </script>

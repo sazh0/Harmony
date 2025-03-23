@@ -1,0 +1,14 @@
+/* global/print.css */
+
+/* Hide all elements by default */
+body * {
+  visibility: hidden;
+}
+
+/* Only show table elements */
+table {
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

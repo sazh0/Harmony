@@ -1,0 +1,21 @@
+Project Title: EcoTrack
+Project Description: EcoTrack is a mobile application designed to help individuals monitor and reduce their environmental footprint. The app allows users to track daily activities like transportation, energy usage, and consumption habits, offering personalized tips and challenges to promote sustainable living.
+Target Audience: Environmentally conscious individuals aged 18–40 who are interested in sustainability, eco-friendly habits, and reducing their carbon footprint. This includes students, young professionals, and families looking to make greener lifestyle choices.
+Design Goals: Create a user-friendly and engaging interface that motivates daily use
+Visualize environmental impact in a clear, meaningful way
+Pages & Components:
+- main: Header, Logo, Gallery, Banner, Sidebar
+- second: Header, Logo, Footer, Contact Info, Testimonial Section, Title, Banner
+Submitted on: 2025-03-23 17:04:48
+---------------------------------
+Project Title: SkillBridge
+Project Description: SkillBridge is a web-based platform that connects university students with internship, training, and project opportunities. It allows students to build profiles, apply for programs, track their progress, and receive feedback from mentors or organizations.
+Target Audience: University students (ages 18–25), especially those in tech and business majors, and companies or institutions offering internships, workshops, or training programs.
+Design Goals: Provide an intuitive interface for students to find and apply to opportunities
+Enable mentorship features with feedback and progress tracking
+Pages & Components:
+- Home: Header, Logo, Header, Navigation Menu, Header, Search Bar, Footer, Contact Info, Footer, Social Media Links, Footer, Copyright
+- Login: Header, Logo, Header, Navigation Menu, Main Content
+- Tracker: Main Content, Header, Logo, Header, Navigation Menu, Banner
+Submitted on: 2025-03-23 17:06:39
+---------------------------------

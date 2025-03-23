@@ -1,0 +1,608 @@
+/* global/main.css */
+
+/* Basic Reset */
+body {
+  background: linear-gradient(94deg, #1F242C 0%, #292D35 70%, #383e48 100%);
+  color: #fff !important;
+  height: 150vh;
+  font-family: 'Lucida Sans', 'Lucida Grande';
+  margin: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.navbar {
+  margin-bottom: 30px;
+  background-color: transparent !important;
+  top: 0;
+  margin-top: 0;
+  padding-top: 0.5rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #76ae9a !important;
+}
+
+.navbar-toggler {
+  float: right !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+
+.nav-link {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.3s;
+  /* Add transform to the transition */
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+@media (max-width: 991.98px) {
+
+  /* Force the collapse container to justify content to the right */
+  .navbar-collapse {
+    justify-content: flex-end !important;
+  }
+
+  /* Ensure the nav list takes full width and aligns text right */
+  .navbar-nav {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  transform: scale(1.1);
+  /* Scale the item */
+}
+
+@keyframes wave1 {
+  25% {
+    transform-origin: 0 100%;
+    transform: scale(1.4, 1.3);
+  }
+
+  75% {
+    transform: scale(1.4, 0.7);
+    transform-origin: 100% 100%;
+  }
+}
+
+@keyframes wave2 {
+  25% {
+    transform-origin: 0 100%;
+  }
+
+  50% {
+    transform: scale(1.3, 0.8);
+  }
+
+  75% {
+    transform-origin: 100% 100%;
+  }
+}
+
+@keyframes wave3 {
+  25% {
+    transform-origin: 100% 100%;
+  }
+
+  50% {
+    transform: scale(1.2, 0.9);
+  }
+
+  75% {
+    transform-origin: 0 100%;
+  }
+}
+
+.wave-path-1 {
+  fill: #76ae9a20;
+  animation: wave1 15s ease-in-out infinite;
+}
+
+.wave-path-2 {
+  fill: #76ae9a10;
+  animation: wave2 15s ease-in-out infinite;
+}
+
+.wave-path-3 {
+  fill: #76ae9a05;
+  animation: wave3 15s ease-in-out infinite;
+}
+
+.wave-dark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Adjusting the wave paths to align properly */
+.bg-wave-dark-1,
+.bg-wave-dark-2,
+.bg-wave-dark-3 {
+  position: absolute;
+  bottom: 0;
+  /* Stick the waves to the bottom of section 1 */
+  width: 100%;
+}
+
+.wave-dark-top {
+  position: fixed;
+  /* Ensure the waves stay fixed relative to the viewport */
+  top: 0px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  transform: scaleY(-1.2);
+}
+
+.bg-wave-dark-top-1 {
+  top: -80%;
+  /* Adjusted to move it further up */
+}
+
+.bg-wave-dark-top-2 {
+  top: -30%;
+  /* Adjusted to move it further up */
+}
+
+.wave-path-top-1 {
+  fill: #76ae9a2E;
+  animation: wave1 15s ease-in-out infinite;
+}
+
+.wave-path-top-2 {
+  fill: #76ae9a1A;
+  animation: wave2 15s ease-in-out infinite;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Custom styles for the navbar toggler image */
+.navbar-toggler-icon-img {
+  width: 30px;
+  /* Adjust the width as needed */
+  height: 30px;
+  /* Adjust the height as needed */
+}
+
+.navbar-toggler-icon-img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.accordion {
+  border: none;
+}
+
+.accordion-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  position: relative;
+}
+
+.accordion-button:after {
+  content: '+';
+  position: absolute;
+  font-size: 1.25rem;
+  right: 20px;
+  transition: transform 0.2s;
+}
+
+.accordion-button[aria-expanded="true"]:after {
+  transform: rotate(-45deg);
+  position: absolute;
+  font-size: 1.5rem;
+  color: #76ae9a;
+}
+
+.accordion-collapse {
+  display: none;
+  padding: 15px;
+  margin-right: 60px;
+  background: rgba(123, 45, 45, 0);
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.accordion-collapse.show {
+  display: block;
+}
+
+/* Styling for the hr line */
+hr {
+  border: none;
+  /* Removes the default border */
+  border-top: 2px solid #76ae9a !important;
+  ;
+  /* Creates a top border with specified color and thickness */
+  margin: 20px 0;
+  /* Adds space above and below the line */
+  width: 100%;
+  /* Sets the width of the line */
+  margin-left: auto;
+  /* Centers the line */
+  margin-right: auto;
+  /* Centers the line */
+}
+
+/* Styling for the section */
+#section-1 {
+  position: relative;
+  padding: 280px 0;
+}
+
+#section-1 .container {
+  max-width: 700px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+#section-1 h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #76ae9a;
+  text-align: center;
+}
+
+#section-1 p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-justify: inter-word;
+}
+
+#section-1 .icon {
+  font-size: 3rem;
+  color: #76ae9a;
+  /* Orange color for the icons */
+  position: absolute;
+  left: -50px;
+  /* Adjust to position icons outside the text area */
+  top: 0;
+}
+
+#section-1 .icon-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Space between icons */
+}
+
+.cta-buttons button {
+  margin: 10px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  background: #76ae9a;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background 0.3s;
+}
+
+.cta-buttons button:hover {
+  background: #76ae9a65;
+}
+
+/*----------*/
+.services-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2D323B, #222831);
+}
+
+.section-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: #76ae9a;
+}
+
+.service-icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(118, 174, 154, 0.2);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  transition: transform 0.4s ease;
+}
+
+/* Removed any rotation; now only a slight scale effect on hover */
+.service-item:hover .service-icon-wrapper {
+  transform: scale(1.05);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #76ae9a;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+}
+
+.service-content p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 5px 0 0;
+}
+
+/* Make the Collaboration service look inactive */
+.coming-soon {
+  /* Remove any extra background to avoid nested box appearance */
+  background-color: transparent;
+  /* Lower opacity gives a faded, inactive feel */
+  opacity: 0.6;
+  /* Disable any hover/interaction effects */
+  pointer-events: none;
+}
+
+/* Adjust the icon color if needed */
+.coming-soon .service-icon {
+  color: #aaa;
+}
+
+/* Style the "Coming Soon" label to blend with the inactive look */
+.coming-soon .coming-label {
+  font-style: italic;
+  color: #aaa;
+  background: none;
+  /* Remove padding if not needed */
+  padding: 0;
+}
+
+/*----------*/
+
+.footer {
+  background-color: #76ae9a59 !important;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  /* Adjust the height as needed */
+  margin: 0;
+  opacity: 1;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
+/*----------*/
+
+/* Card & Form Wizard */
+.card {
+  background-color: #2C3139;
+  border: none;
+  border-radius: 10px;
+}
+
+.card-header,
+.card-body {
+  background-color: #2C3139;
+  color: #fff;
+  padding: 2rem;
+}
+
+.btn-custom {
+  background-color: #76ae9a;
+  color: #fff;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #5f8e7d;
+}
+
+/* Form Controls */
+.form-control {
+  background-color: #3a3f47;
+  border: 1px solid #76ae9a;
+  color: #fff;
+}
+
+.form-control:focus {
+  background-color: #3a3f47;
+  border-color: #76ae9a;
+  box-shadow: none;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* Progress Bar */
+.progress {
+  height: 8px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background-color: #76ae9a;
+}
+
+/* Wizard Steps */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* Website Pages Section */
+#pagesSection {
+  margin-bottom: 20px;
+}
+
+#pagesList span {
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Other Component Input */
+#customComponentGroup {
+  margin-bottom: 20px;
+}
+
+/* Active Page Components Section */
+#activePageSection {
+  margin-bottom: 20px;
+  display: none;
+}
+
+#activePageComponentsDisplay span {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.remove-comp {
+  margin-left: 5px;
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+
+/* Standard Components Library */
+fieldset {
+  margin-top: 20px;
+}
+
+.component {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.component p {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Sub-components: Each sub-component now has its own Add button */
+.sub-components {
+  margin-left: 20px;
+  padding-left: 15px;
+  border-left: 2px dashed #76ae9a;
+  margin-top: 10px;
+}
+
+.sub-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sub-item span {
+  flex: 1;
+}
+
+.sub-item button {
+  flex-shrink: 0;
+}
+
+/* Review Step */
+#reviewSummary h4 {
+  margin-top: 20px;
+}
+
+#reviewSummary p {
+  margin-bottom: 10px;
+}

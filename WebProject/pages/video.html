@@ -1,0 +1,136 @@
+<!--
+    Name: Sara Abdulaziz Alzahrani | Joud Jamal Alkishi 
+    ID: 2105947 | 2011026
+    Section: GAR
+    Date: 2025-03-23
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video</title>
+  <link rel="stylesheet" href="../global/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      height: 0%;
+      min-height: 100vh !important;
+      /* ensures at least full viewport height */
+    }
+
+    .video-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(90deg, #76ae9a, #76ae9a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      margin-top: 10%;
+    }
+
+    .video-description {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.2rem;
+      color: #ffffff;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+    }
+
+    /* Style for the highlighted phrase */
+    .highlight {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .highlight:hover {
+      transform: scale(1.1);
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-container:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top upside-down waves -->
+  <header class="section section-md section-md-1 text-center bg-wave-dark-wrap pb-0 text-gray-600 fixed-top">
+    <div class="bg-wave-dark bg-wave-dark-top-1 bg-gray-800">
+      <svg class="wave-dark wave-dark-top" width="1920" height="713" viewBox="0 0 1920 713" preserveAspectRatio="none">
+        <path class="wave-path wave-path-top-1"
+          d="M1920 463.314V713H0V414.325C0.0515862 414.316 0.103105 414.308 0.154556 414.299C59.8232 467.769 270.664 573.445 636.676 568.392C873.316 565.126 1040.4 505.514 1188.57 452.65C1326.86 403.309 1448.68 359.846 1595.21 373.565C1727.41 385.944 1837.94 423.471 1920 463.314Z"
+          fill="white"></path>
+        <path class="wave-path wave-path-top-2"
+          d="M1920 463.988V713H0V234.66C102.275 199.182 221.353 170.486 354.422 158.026C584.381 136.494 775.567 204.707 992.611 282.146C1225.15 365.113 1373 457.092 1858.75 463.796C1879.49 464.082 1899.9 464.142 1920 463.988Z"
+          fill="white"></path>
+      </svg>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="../index.html">Harmony</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Video Tutorial Section -->
+  <section class="video-tutorial py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Animated Title -->
+          <h2 class="video-title text-center mb-4" data-aos="fade-up">
+            What is UI/UX Design?
+          </h2>
+          <!-- Animated Description -->
+          <p class="video-description lead text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            What is UX/UI Design? How can you get started? <br> We'll get you up to speed
+            <br>
+            <span class="highlight">in under 2 minutes</span>
+          </p>
+          <!-- Animated & Interactive Video Container -->
+          <div class="video-container embed-responsive embed-responsive-16by9 shadow rounded" data-aos="zoom-in"
+            data-aos-delay="200">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zHAa-m16NGk"
+              title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 Harmony. All rights reserved.</p>
+  </footer>
+
+  <!-- jQuery, Popper.js, and Bootstrap JS (ensure these are loaded before AOS) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- AOS Library for animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

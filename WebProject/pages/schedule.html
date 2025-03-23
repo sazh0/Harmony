@@ -1,0 +1,292 @@
+<!--
+    Name: Sara Abdulaziz Alzahrani | Joud Jamal Alkishi 
+    ID: 2105947 | 2011026
+    Section: GAR
+    Date: 2025-03-23
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks Tracker</title>
+    <link rel="stylesheet" href="../global/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .table-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            padding: 20px;
+            padding-bottom: 60px;
+            position: relative;
+        }
+
+        .table thead th {
+            background-color: #76ae9a;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 12px;
+            white-space: nowrap;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Default row hover */
+        .table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .progress {
+            height: 20px;
+            margin-bottom: 0;
+        }
+
+        .progress-bar {
+            background-color: #76ae9a;
+        }
+
+        /* Interactive Task Status Dropdown styling */
+        select.form-control-status {
+            width: 120px;
+            margin: 0 auto;
+            border: 1px solid #383e48;
+            border-radius: 0.25rem;
+            padding: 0.2rem 0.4rem;
+            text-align-last: center;
+        }
+
+        select.form-control-status.status-todo {
+            background-color: #f8d7da;
+            /* light red */
+            color: #721c24;
+        }
+
+        select.form-control-status.status-doing {
+            background-color: #fff3cd;
+            /* light yellow */
+            color: #856404;
+        }
+
+        select.form-control-status.status-done {
+            background-color: #d4edda;
+            /* light green */
+            color: #155724;
+        }
+
+        /* Styling for the project indicator */
+        #projectIndicator {
+            color: #383e4899;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Pagination controls */
+        .pagination-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top upside-down waves -->
+    <header class="section section-md section-md-1 text-center bg-wave-dark-wrap pb-0 text-gray-600 fixed-top">
+        <div class="bg-wave-dark bg-wave-dark-top-1 bg-gray-800">
+            <svg class="wave-dark wave-dark-top" width="1920" height="713" viewBox="0 0 1920 713"
+                preserveAspectRatio="none">
+                <path class="wave-path wave-path-top-1"
+                    d="M1920 463.314V713H0V414.325C0.0515862 414.316 0.103105 414.308 0.154556 414.299C59.8232 467.769 270.664 573.445 636.676 568.392C873.316 565.126 1040.4 505.514 1188.57 452.65C1326.86 403.309 1448.68 359.846 1595.21 373.565C1727.41 385.944 1837.94 423.471 1920 463.314Z"
+                    fill="white"></path>
+                <path class="wave-path wave-path-top-2"
+                    d="M1920 463.988V713H0V234.66C102.275 199.182 221.353 170.486 354.422 158.026C584.381 136.494 775.567 204.707 992.611 282.146C1225.15 365.113 1373 457.092 1858.75 463.796C1879.49 464.082 1899.9 464.142 1920 463.988Z"
+                    fill="white"></path>
+            </svg>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="../index.html">Harmony</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="project.html">Add Project</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+            <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <!-- Header and Navigation omitted for brevity -->
+    <div class="container table-container">
+        <h2 class="text-center mb-4" style="color: #76ae9a;">Schedule & Task Tracker</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Page &amp; Completion</th>
+                        <th>Task (Component)</th>
+                        <th>Task Status</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                    <!-- Rows generated via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination controls -->
+        <nav aria-label="Project pagination" class="pagination-container">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" id="prevProject">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <span class="page-link" id="projectIndicator">Project 1 of 1</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" id="nextProject">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        var scheduleData = [];
+        var currentProjectIndex = 0;
+
+        // Prepare schedule data: Convert components string into a tasks array.
+        function prepareScheduleData(data) {
+            data.forEach(function (project) {
+                project.pages.forEach(function (page) {
+                    if (page.components) {
+                        var comps = page.components.split(",").map(function (c) { return c.trim(); });
+                        page.tasks = comps.map(function (task) {
+                            return { name: task, status: "To Do" };
+                        });
+                    } else {
+                        page.tasks = [];
+                    }
+                });
+            });
+        }
+
+        // Update the select's class based on its value (for color coding)
+        function updateSelectColor(selectElem, status) {
+            selectElem.removeClass("status-todo status-doing status-done");
+            if (status === "To Do") {
+                selectElem.addClass("status-todo");
+            } else if (status === "Doing") {
+                selectElem.addClass("status-doing");
+            } else if (status === "Done") {
+                selectElem.addClass("status-done");
+            }
+        }
+
+        // Render the table for a single project (pagination)
+        function renderScheduleTable(data, projectIndex) {
+            var tbody = $("#scheduleBody");
+            tbody.empty();
+            if (!data.length) return;
+            var project = data[projectIndex];
+            var projectTaskCount = 0;
+            project.pages.forEach(function (page) {
+                projectTaskCount += page.tasks.length;
+            });
+            var projectRendered = false;
+            project.pages.forEach(function (page, pIndex) {
+                var pageTaskCount = page.tasks.length;
+                var doneCount = page.tasks.filter(function (t) { return t.status === "Done"; }).length;
+                var pageCompletion = pageTaskCount ? Math.round((doneCount / pageTaskCount) * 100) : 0;
+                var pageRendered = false;
+                page.tasks.forEach(function (task) {
+                    var tr = $("<tr></tr>");
+                    tr.attr("data-project-index", currentProjectIndex);
+                    tr.attr("data-page-index", pIndex);
+                    if (!projectRendered) {
+                        var projTd = $("<td rowspan='" + projectTaskCount + "' class='col-project'></td>").text(project.title);
+                        tr.append(projTd);
+                        projectRendered = true;
+                    }
+                    if (!pageRendered) {
+                        var pageTd = $("<td rowspan='" + pageTaskCount + "' class='col-page'></td>");
+                        pageTd.text(page.page);
+                        var progressBar = $('<div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width: '
+                            + pageCompletion + '%;" aria-valuenow="' + pageCompletion + '" aria-valuemin="0" aria-valuemax="100">'
+                            + pageCompletion + '%</div></div>');
+                        pageTd.append(progressBar);
+                        tr.append(pageTd);
+                        pageRendered = true;
+                    }
+                    tr.append($("<td class='col-task'></td>").text(task.name));
+                    var select = $('<select class="form-control form-control-status col-status"></select>');
+                    ["To Do", "Doing", "Done"].forEach(function (option) {
+                        var opt = $("<option></option>").val(option).text(option);
+                        if (task.status === option) { opt.prop("selected", true); }
+                        select.append(opt);
+                    });
+                    updateSelectColor(select, task.status);
+                    select.change(function () {
+                        task.status = $(this).val();
+                        renderScheduleTable(scheduleData, currentProjectIndex);
+                    });
+                    tr.append($("<td></td>").append(select));
+                    tbody.append(tr);
+                });
+            });
+            $("#projectIndicator").text("Project " + (projectIndex + 1) + " of " + scheduleData.length);
+        }
+
+        // Pagination controls
+        $(document).ready(function () {
+            $.getJSON("../server/schedule_data.php", function (data) {
+                scheduleData = data;
+                prepareScheduleData(scheduleData);
+                renderScheduleTable(scheduleData, currentProjectIndex);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Error loading schedule data:", textStatus, errorThrown);
+            });
+
+            $("#prevProject").click(function (e) {
+                e.preventDefault();
+                if (currentProjectIndex > 0) {
+                    currentProjectIndex--;
+                    renderScheduleTable(scheduleData, currentProjectIndex);
+                }
+            });
+            $("#nextProject").click(function (e) {
+                e.preventDefault();
+                if (currentProjectIndex < scheduleData.length - 1) {
+                    currentProjectIndex++;
+                    renderScheduleTable(scheduleData, currentProjectIndex);
+                }
+            });
+        });
+    </script>
+</body>
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2025 Harmony. All rights reserved.</p>
+</footer>
+
+</html>

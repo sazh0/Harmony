@@ -1,0 +1,384 @@
+<!--
+    Name: Sara Abdulaziz Alzahrani | Joud Jamal Alkishi 
+    ID: 2105947 | 2011026
+    Section: GAR
+    Date: 2025-03-23
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback</title>
+  <link rel="stylesheet" href="../global/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Feedback Card Enhancements */
+    .feedback-card {
+      background-color: white !important;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card.feedback-card,
+    .card.feedback-card .card-body {
+      background-color: #fff !important;
+    }
+
+    .feedback-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Form Controls */
+    .form-control,
+    .form-select {
+      border-radius: 0.5rem;
+      padding: 12px 15px;
+      border: 1px solid var(--input-border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--input-border-focus);
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    }
+
+    /* Submit Button */
+    .btn-primary {
+      background: linear-gradient(135deg, #1F242C, #383e48);
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      padding: 12px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.02);
+    }
+
+    fieldset {
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      background-color: #ffffff;
+      color: #1F242C;
+    }
+
+    legend {
+      width: auto;
+      padding: 0 10px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Additional Comments */
+    .comments-section .form-floating textarea {
+      height: 150px;
+      border: 1px solid #ced4da;
+    }
+
+    .comments-section small {
+      display: block;
+      margin-top: 0.5rem;
+      color: #6c757d;
+    }
+
+    /* Custom Toggle Styles for Options */
+    .btn-custom-outline {
+      color: #383e48;
+      border: 1px solid #383e48;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-custom-outline:hover {
+      background-color: #383e48;
+      color: #fff;
+    }
+
+    .btn-custom-outline.active,
+    .btn-custom-outline:active,
+    .btn-check:checked+.btn-custom-outline {
+      background-color: #383e48;
+      color: #fff;
+      border-color: #383e48;
+    }
+
+    /* Hide the default radio/checkbox boxes */
+    .btn-check {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+
+    /* Custom Dropdown Styles for Preferred Improvements */
+    .dropdown-toggle.btn-custom-outline {
+      color: #383e48;
+      border: 1px solid #383e48;
+      background-color: transparent;
+    }
+
+    .dropdown-toggle.btn-custom-outline:hover,
+    .dropdown-toggle.btn-custom-outline:focus {
+      background-color: #383e48;
+      color: #fff;
+      border-color: #383e48;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: #383e48;
+    }
+
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus {
+      background-color: #383e48;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top upside-down waves -->
+  <header class="section section-md section-md-1 text-center bg-wave-dark-wrap pb-0 text-gray-600 fixed-top">
+    <div class="bg-wave-dark bg-wave-dark-top-1 bg-gray-800">
+      <svg class="wave-dark wave-dark-top" width="1920" height="713" viewBox="0 0 1920 713" preserveAspectRatio="none">
+        <path class="wave-path wave-path-top-1"
+          d="M1920 463.314V713H0V414.325C0.0515862 414.316 0.103105 414.308 0.154556 414.299C59.8232 467.769 270.664 573.445 636.676 568.392C873.316 565.126 1040.4 505.514 1188.57 452.65C1326.86 403.309 1448.68 359.846 1595.21 373.565C1727.41 385.944 1837.94 423.471 1920 463.314Z"
+          fill="white"></path>
+        <path class="wave-path wave-path-top-2"
+          d="M1920 463.988V713H0V234.66C102.275 199.182 221.353 170.486 354.422 158.026C584.381 136.494 775.567 204.707 992.611 282.146C1225.15 365.113 1373 457.092 1858.75 463.796C1879.49 464.082 1899.9 464.142 1920 463.988Z"
+          fill="white"></path>
+      </svg>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="../index.html">Harmony</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="mt-5 pt-5">
+    <section class="feedback-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="card feedback-card">
+              <div class="card-header text-center bg-light" style="color: #383e48; font-weight: bold;">
+                We Value Your Feedback
+              </div>
+              <div class="card-body">
+                <form action="../server/submit_feedback.php" method="post" id="feedbackForm">
+                  <!-- Personal Information -->
+                  <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="question-icon bi bi-info-circle" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                              <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                            </svg>
+                            Name:
+                          </label>
+                          <input type="text" id="name" name="name" class="form-control"
+                            style="border: 1px solid #ced4da;" placeholder="Your Name" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label for="email" class="form-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="question-icon bi bi-info-circle" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                              <path
+                                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                            </svg>
+                            Email:
+                          </label>
+                          <input type="email" id="email" name="email" class="form-control"
+                            style="border: 1px solid #ced4da;" placeholder="Your Email" required>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Feedback Details -->
+                  <fieldset>
+                    <legend>Feedback Details</legend>
+                    <!-- User Rating as Radio Toggle Buttons -->
+                    <div class="mb-3">
+                      <label class="form-label d-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="question-icon bi bi-info-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                          <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                        </svg>
+                        User Rating:
+                      </label>
+                      <div class="btn-group" role="group" aria-label="User Rating">
+                        <input type="radio" class="btn-check" name="rating" id="ratingGood" value="Good">
+                        <label class="btn btn-custom-outline" for="ratingGood">Good</label>
+                        <input type="radio" class="btn-check" name="rating" id="ratingAverage" value="Average">
+                        <label class="btn btn-custom-outline" for="ratingAverage">Average</label>
+                        <input type="radio" class="btn-check" name="rating" id="ratingPoor" value="Poor">
+                        <label class="btn btn-custom-outline" for="ratingPoor">Poor</label>
+                      </div>
+                    </div>
+                    <!-- Services Used as Checkboxes -->
+                    <div class="mb-3">
+                      <label class="form-label d-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="question-icon bi bi-info-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                          <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                        </svg>
+                        Services Used:
+                      </label>
+                      <div class="btn-group" role="group" aria-label="Services Used">
+                        <input type="checkbox" class="btn-check" id="serviceBrainstorming" name="services[]"
+                          value="Brainstorming">
+                        <label class="btn btn-custom-outline" for="serviceBrainstorming">Brainstorming</label>
+                        <input type="checkbox" class="btn-check" id="serviceComponentLibrary" name="services[]"
+                          value="Component Library">
+                        <label class="btn btn-custom-outline" for="serviceComponentLibrary">Component Library</label>
+                        <input type="checkbox" class="btn-check" id="serviceTaskManagement" name="services[]"
+                          value="Task Management">
+                        <label class="btn btn-custom-outline" for="serviceTaskManagement">Task Management</label>
+                        <input type="checkbox" class="btn-check" id="serviceCollaboration" name="services[]"
+                          value="Collaboration">
+                        <label class="btn btn-custom-outline" for="serviceCollaboration">Collaboration</label>
+                      </div>
+                    </div>
+                    <!-- Preferred Improvements as Dropdown Menu -->
+                    <div class="mb-3">
+                      <label class="form-label d-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="question-icon bi bi-info-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                          <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                        </svg>
+                        Preferred Improvements:
+                      </label>
+                      <div class="dropdown">
+                        <button class="btn btn-custom-outline dropdown-toggle" type="button" id="preferredDropdown"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Select an option
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="preferredDropdown">
+                          <li><a class="dropdown-item" href="javascript:void(0)"
+                              onclick="document.getElementById('preferredDropdown').innerText = 'UI Enhancements'; document.getElementById('preference').value = 'UI Enhancements';">UI
+                              Enhancements</a></li>
+                          <li><a class="dropdown-item" href="javascript:void(0)"
+                              onclick="document.getElementById('preferredDropdown').innerText = 'UX Flow'; document.getElementById('preference').value = 'UX Flow';">UX
+                              Flow</a></li>
+                          <li><a class="dropdown-item" href="javascript:void(0)"
+                              onclick="document.getElementById('preferredDropdown').innerText = 'New Features'; document.getElementById('preference').value = 'New Features';">New
+                              Features</a></li>
+                          <li><a class="dropdown-item" href="javascript:void(0)"
+                              onclick="document.getElementById('preferredDropdown').innerText = 'Other'; document.getElementById('preference').value = 'Other';">Other</a>
+                          </li>
+                        </ul>
+                        <input type="hidden" name="preference" id="preference" value="">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <!-- Additional Comments (Optional) -->
+                  <div class="mb-3 comments-section">
+                    <div class="form-floating">
+                      <textarea class="form-control" id="comments" name="comments"
+                        style="height: 150px; border: 1px solid #ced4da;"
+                        placeholder="Enter any additional comments or suggestions (Optional)"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Validation -->
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+      // Validate User Rating (radio group)
+      var ratingRadios = document.querySelectorAll("input[name='rating']");
+      var ratingSelected = Array.from(ratingRadios).some(radio => radio.checked);
+      if (!ratingSelected) {
+        alert("Please select a User Rating.");
+        document.querySelector("label[for='ratingGood']").scrollIntoView({ behavior: "smooth", block: "center" });
+        e.preventDefault();
+        return;
+      }
+      // Validate Services Used (at least one checkbox)
+      var serviceCheckboxes = document.querySelectorAll("input[name='services[]']");
+      var serviceChecked = Array.from(serviceCheckboxes).some(chk => chk.checked);
+      if (!serviceChecked) {
+        alert("Please select at least one Service Used.");
+        document.querySelector("label[for='serviceBrainstorming']").scrollIntoView({ behavior: "smooth", block: "center" });
+        e.preventDefault();
+        return;
+      }
+      // Validate Preferred Improvements (hidden input must not be empty)
+      var preferenceValue = document.getElementById('preference').value;
+      if (preferenceValue.trim() === '') {
+        alert("Please select a Preferred Improvement.");
+        document.getElementById('preferredDropdown').scrollIntoView({ behavior: "smooth", block: "center" });
+        e.preventDefault();
+        return;
+      }
+    });
+  </script>
+</body>
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2025 Harmony. All rights reserved.</p>
+</footer>
+<!-- Bootstrap JS dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
